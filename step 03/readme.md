@@ -1,1 +1,3 @@
+Step 03 Reflection:
 
+AWS credentials and GitHub tokens should never be committed to a repository, even if the repository is private, because they contain sensitive information that can give someone access to your accounts and resources. If these credentials are exposed, someone could use them to access AWS services, make changes, or access private GitHub repositories without permission. Private repositories are also not completely risk-free because they can accidentally become public or be accessed by someone who should not have permission. For this reason, credentials and tokens should always be stored securely and kept separate from any files that are pushed to GitHub.
