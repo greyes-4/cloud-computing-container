@@ -1,1 +1,3 @@
+Step 01 Reflection:
 
+Enabling MFA is important because a password by itself may not be enough to protect an AWS account. This is especially important for the root user because it has complete access to the account and all of its resources. MFA adds another layer of security by requiring an authentication code in addition to the password. Creating a separate IAM user for everyday work also reduces the need to use the root account. Following the principle of least privilege allows users to have access only to the AWS services and resources that they need. Together, MFA and proper IAM permissions help reduce the risk of unauthorized access and make the AWS environment more secure.
