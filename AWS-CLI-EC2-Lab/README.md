@@ -1,1 +1,1 @@
-
+The .env file is exluded from the Git becuase it can contain sensitive information like credentials, API keys, and AWS configuration values. Even when a repository is private, sensitive information should not be committed because the repository could later be shared, accessed by other users, or accidentally made public. Using .gitignore helps prevent the .env file from being tracked, while .env.example can safely show the variables needed to run the project without exposing the actual values. 
