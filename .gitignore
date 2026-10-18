@@ -1,2 +1,13 @@
 .env
 *.pem
+
+# Lab 04 generated files and backups
+.env
+.env_lab03_backup
+stack_outputs.env
+*_lab03_backup.sh
+
+# Python environment and cache
+.venv/
+__pycache__/
+testing/__pycache__/
