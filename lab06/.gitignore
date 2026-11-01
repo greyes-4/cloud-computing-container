@@ -1,0 +1,24 @@
+.env
+*.pem
+
+# Lab 04 generated files and backups
+.env
+.env_lab03_backup
+stack_outputs.env
+*_lab03_backup.sh
+
+# Python environment and cache
+.venv/
+__pycache__/
+testing/__pycache__/
+
+# Lab 06 sensitive and generated files
+.env
+*.pem
+*backup*
+*.pre-fix
+db_outputs.env
+stack_outputs.env
+lt-data-*.json
+user-data-*.sh
+node_modules/
