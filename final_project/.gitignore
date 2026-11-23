@@ -1,0 +1,27 @@
+
+# Sensitive credentials
+*.pem
+*.key
+.env
+.env.local
+.aws/
+credentials
+
+# Dependencies
+node_modules/
+
+# Generated deployment files
+stack_outputs.env
+user-data-*.sh
+*-lt-data.json
+
+# Backup files
+*.original
+*.backup
+
+# Previous lab screenshots
+EC2_ALB_ASG Screenshot*.png
+
+# Temporary files
+*.log
+.DS_Store

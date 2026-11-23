@@ -1,0 +1,12 @@
+[
+    {
+        "ID": "i-0043d30e05ce1ee8a",
+        "Health": "Healthy",
+        "State": "Pending"
+    },
+    {
+        "ID": "i-0b5009b99e313adf1",
+        "Health": "Unhealthy",
+        "State": "Terminating"
+    }
+]

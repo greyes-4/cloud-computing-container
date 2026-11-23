@@ -1,0 +1,95 @@
+
+> resume-uploader@1.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: cleanText strips a BOM and control characters, and rejects bad files
+ok 1 - cleanText strips a BOM and control characters, and rejects bad files
+  ---
+  duration_ms: 3.307168
+  type: 'test'
+  ...
+# Subtest: parseResume accepts good output and upper-cases section titles
+ok 2 - parseResume accepts good output and upper-cases section titles
+  ---
+  duration_ms: 2.357428
+  type: 'test'
+  ...
+# Subtest: parseResume drops keywords that are not in the job description
+ok 3 - parseResume drops keywords that are not in the job description
+  ---
+  duration_ms: 0.448834
+  type: 'test'
+  ...
+# Subtest: parseResume accepts JSON wrapped in a code fence
+ok 4 - parseResume accepts JSON wrapped in a code fence
+  ---
+  duration_ms: 0.269042
+  type: 'test'
+  ...
+# Subtest: parseResume rejects unusable output
+ok 5 - parseResume rejects unusable output
+  ---
+  duration_ms: 0.487583
+  type: 'test'
+  ...
+# Subtest: parseResume caps lengths and ignores wrong types
+ok 6 - parseResume caps lengths and ignores wrong types
+  ---
+  duration_ms: 0.268742
+  type: 'test'
+  ...
+# Subtest: splitRuns marks whole-word keywords only, ignoring case
+ok 7 - splitRuns marks whole-word keywords only, ignoring case
+  ---
+  duration_ms: 0.842241
+  type: 'test'
+  ...
+# Subtest: buildDocx produces a real .docx (a zip file)
+ok 8 - buildDocx produces a real .docx (a zip file)
+  ---
+  duration_ms: 74.786968
+  type: 'test'
+  ...
+# Subtest: the limiter allows N hits per window, then recovers
+ok 9 - the limiter allows N hits per window, then recovers
+  ---
+  duration_ms: 0.975132
+  type: 'test'
+  ...
+# {"ts":"2026-11-23T05:25:19.649Z","event":"resume_created","id":"9ee7be192a9e87a7d8d9f184283ed387","keywords":3}
+# Subtest: route: saves both files to S3 and redirects to the viewer
+ok 10 - route: saves both files to S3 and redirects to the viewer
+  ---
+  duration_ms: 102.942843
+  type: 'test'
+  ...
+# Subtest: route: a missing file is a 400 and Gemini is never called
+ok 11 - route: a missing file is a 400 and Gemini is never called
+  ---
+  duration_ms: 10.977519
+  type: 'test'
+  ...
+# Subtest: route: a non-txt upload is refused
+ok 12 - route: a non-txt upload is refused
+  ---
+  duration_ms: 11.638235
+  type: 'test'
+  ...
+# {"ts":"2026-11-23T05:25:19.689Z","event":"gemini_error","message":"x","status":429}
+# {"ts":"2026-11-23T05:25:19.695Z","event":"model_output_rejected","message":"model_output_not_json"}
+# Subtest: route: Gemini quota errors and junk output become friendly pages
+ok 13 - route: Gemini quota errors and junk output become friendly pages
+  ---
+  duration_ms: 15.162179
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1268.16232

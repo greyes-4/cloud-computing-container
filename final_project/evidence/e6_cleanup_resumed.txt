@@ -1,0 +1,53 @@
+== Deleting Target Groups ==
+Target group deleted.
+Target group deleted.
+== Cleaning up security groups ==
+{
+    "Return": true,
+    "RevokedSecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-0169baba7c1d83034",
+            "GroupId": "sg-00569ad1588cf368c",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 3000,
+            "ToPort": 3000,
+            "ReferencedGroupId": "sg-0fe5a4b32b5b87236"
+        }
+    ]
+}
+{
+    "Return": true,
+    "GroupId": "sg-0fe5a4b32b5b87236"
+}
+ALB security group deleted.
+Deleting launch templates...
+{
+    "LaunchTemplate": {
+        "LaunchTemplateId": "lt-0db1bc90aef40aea4",
+        "LaunchTemplateName": "itmo-444-544-uploader-lt",
+        "CreateTime": "2026-11-23T04:17:32+00:00",
+        "CreatedBy": "arn:aws:iam::284901686080:user/lab-user",
+        "DefaultVersionNumber": 1,
+        "LatestVersionNumber": 1,
+        "Operator": {
+            "Managed": false
+        }
+    }
+}
+{
+    "LaunchTemplate": {
+        "LaunchTemplateId": "lt-0722a90774fcd79f8",
+        "LaunchTemplateName": "itmo-444-544-viewer-lt",
+        "CreateTime": "2026-11-23T04:17:36+00:00",
+        "CreatedBy": "arn:aws:iam::284901686080:user/lab-user",
+        "DefaultVersionNumber": 1,
+        "LatestVersionNumber": 1,
+        "Operator": {
+            "Managed": false
+        }
+    }
+}
+Removing IAM instance profiles and roles...
+Emptying and deleting S3 bucket...
+Cleanup complete.

@@ -1,0 +1,14 @@
+[
+    {
+        "ID": "sg-0c535c30a7fddcfd2",
+        "Name": "default"
+    },
+    {
+        "ID": "sg-0b4cc352a3e635089",
+        "Name": "ITMO-444-544-lab-sg"
+    },
+    {
+        "ID": "sg-00569ad1588cf368c",
+        "Name": "itmo-444-544-app-sg"
+    }
+]

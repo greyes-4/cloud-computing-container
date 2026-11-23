@@ -1,0 +1,3 @@
+== Deleting SNS topic ==
+== Deleting SSM parameter ==
+Project cleanup complete.

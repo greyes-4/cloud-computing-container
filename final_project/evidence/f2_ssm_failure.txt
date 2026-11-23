@@ -1,0 +1,25 @@
+Nov 23 05:31:31 ip-172-31-11-140.us-east-2.compute.internal systemd[1]: Started uploader.service - Uploader App.
+Nov 23 05:31:32 ip-172-31-11-140.us-east-2.compute.internal node[10607]: (node:10607) Warning: NodeDeprecationWarning: The AWS SDK for JavaScript (v3) will
+Nov 23 05:31:32 ip-172-31-11-140.us-east-2.compute.internal node[10607]: no longer support Node.js v18.20.8 in January 2026.
+Nov 23 05:31:32 ip-172-31-11-140.us-east-2.compute.internal node[10607]: To continue receiving updates to AWS services, bug fixes, and security
+Nov 23 05:31:32 ip-172-31-11-140.us-east-2.compute.internal node[10607]: updates please upgrade to a supported Node.js LTS version.
+Nov 23 05:31:32 ip-172-31-11-140.us-east-2.compute.internal node[10607]: More information can be found at: https://a.co/c895JFp
+Nov 23 05:31:32 ip-172-31-11-140.us-east-2.compute.internal node[10607]: (Use `node --trace-warnings ...` to show where the warning was created)
+Nov 23 05:31:32 ip-172-31-11-140.us-east-2.compute.internal node[10607]: {"ts":"2026-11-23T05:31:32.153Z","event":"uploader_started","port":"3000","model":"gemini-3.1-flash-lite"}
+Nov 23 05:34:42 ip-172-31-11-140.us-east-2.compute.internal node[10607]: {"ts":"2026-11-23T05:34:42.965Z","event":"gemini_error","message":"gemini_http_error","status":503}
+Nov 23 05:40:28 ip-172-31-11-140.us-east-2.compute.internal node[10607]: {"ts":"2026-11-23T05:40:28.391Z","event":"resume_created","id":"986c9d8feb5a26cd3ca781e115e61c95","keywords":10}
+Nov 23 05:55:04 ip-172-31-11-140.us-east-2.compute.internal node[10607]: {"ts":"2026-11-23T05:55:04.443Z","event":"resume_created","id":"8926f9ff26385a51abafd8654ae18dd1","keywords":12}
+Nov 23 05:56:39 ip-172-31-11-140.us-east-2.compute.internal node[10607]: {"ts":"2026-11-23T05:56:39.983Z","event":"resume_created","id":"e6288977a3ff0bbf9a1646b8d0364be8","keywords":10}
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal systemd[1]: Stopping uploader.service - Uploader App...
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal systemd[1]: uploader.service: Deactivated successfully.
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal systemd[1]: Stopped uploader.service - Uploader App.
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal systemd[1]: uploader.service: Consumed 2.004s CPU time.
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal systemd[1]: Started uploader.service - Uploader App.
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal node[11718]: (node:11718) Warning: NodeDeprecationWarning: The AWS SDK for JavaScript (v3) will
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal node[11718]: no longer support Node.js v18.20.8 in January 2026.
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal node[11718]: To continue receiving updates to AWS services, bug fixes, and security
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal node[11718]: updates please upgrade to a supported Node.js LTS version.
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal node[11718]: More information can be found at: https://a.co/c895JFp
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal node[11718]: (Use `node --trace-warnings ...` to show where the warning was created)
+Nov 23 06:03:33 ip-172-31-11-140.us-east-2.compute.internal node[11718]: {"ts":"2026-11-23T06:03:33.784Z","event":"uploader_started","port":"3000","model":"gemini-3.1-flash-lite"}
+Nov 23 06:03:50 ip-172-31-11-140.us-east-2.compute.internal node[11718]: {"ts":"2026-11-23T06:03:50.785Z","event":"gemini_error","message":"User: arn:aws:sts::284901686080:assumed-role/itmo-444-544-uploader-role/i-0c500d6b67b16bf2e is not authorized to perform: ssm:GetParameter on resource: arn:aws:ssm:us-east-2:284901686080:parameter/itmo-444/gemini-api-key because no identity-based policy allows the ssm:GetParameter action"}

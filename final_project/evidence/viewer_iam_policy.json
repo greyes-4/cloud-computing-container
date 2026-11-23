@@ -1,0 +1,19 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::itmo-444-544-gaelreyes-fileshare/resumes/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sns:ListSubscriptionsByTopic",
+                "sns:Subscribe",
+                "sns:Publish"
+            ],
+            "Resource": "arn:aws:sns:us-east-2:284901686080:resume-mailer-greyes"
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+== S3 bucket ==
+{
+    "Location": "http://itmo-444-544-gaelreyes-fileshare.s3.amazonaws.com/",
+    "BucketArn": "arn:aws:s3:::itmo-444-544-gaelreyes-fileshare"
+}
+== Configuring S3 lifecycle rule ==
+{
+    "TransitionDefaultMinimumObjectSize": "all_storage_classes_128K"
+}
+== Creating IAM trust policy ==
+== Uploader role ==
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "itmo-444-544-uploader-role",
+        "RoleId": "AROAUEVLWXNAACYA7YGKJ",
+        "Arn": "arn:aws:iam::284901686080:role/itmo-444-544-uploader-role",
+        "CreateDate": "2026-11-23T04:40:40+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "ec2.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+{
+    "InstanceProfile": {
+        "Path": "/",
+        "InstanceProfileName": "itmo-444-544-uploader-profile",
+        "InstanceProfileId": "AIPAUEVLWXNAB5S2ZO5DT",
+        "Arn": "arn:aws:iam::284901686080:instance-profile/itmo-444-544-uploader-profile",
+        "CreateDate": "2026-11-23T04:40:43+00:00",
+        "Roles": []
+    }
+}
+== Viewer role ==
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "itmo-444-544-viewer-role",
+        "RoleId": "AROAUEVLWXNAGC7IU6H63",
+        "Arn": "arn:aws:iam::284901686080:role/itmo-444-544-viewer-role",
+        "CreateDate": "2026-11-23T04:40:45+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "ec2.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+{
+    "InstanceProfile": {
+        "Path": "/",
+        "InstanceProfileName": "itmo-444-544-viewer-profile",
+        "InstanceProfileId": "AIPAUEVLWXNAPJGPCRSVX",
+        "Arn": "arn:aws:iam::284901686080:instance-profile/itmo-444-544-viewer-profile",
+        "CreateDate": "2026-11-23T04:40:48+00:00",
+        "Roles": []
+    }
+}
+== Preparing application user-data ==
+Application files encoded successfully.
+== Building Uploader user-data ==
+Uploader user-data: 10027 bytes
+== Building Viewer user-data ==
+Viewer user-data: 7744 bytes
+== Building launch template data ==
+== Creating/updating launch templates ==
+Creating uploader launch template.
+{
+    "LaunchTemplate": {
+        "LaunchTemplateId": "lt-072f6ab27a2d527c8",
+        "LaunchTemplateName": "itmo-444-544-uploader-lt",
+        "CreateTime": "2026-11-23T04:40:52+00:00",
+        "CreatedBy": "arn:aws:iam::284901686080:user/lab-user",
+        "DefaultVersionNumber": 1,
+        "LatestVersionNumber": 1,
+        "Operator": {
+            "Managed": false
+        }
+    }
+}
+Creating viewer launch template.
+{
+    "LaunchTemplate": {
+        "LaunchTemplateId": "lt-0e6619ea1891d041a",
+        "LaunchTemplateName": "itmo-444-544-viewer-lt",
+        "CreateTime": "2026-11-23T04:40:55+00:00",
+        "CreatedBy": "arn:aws:iam::284901686080:user/lab-user",
+        "DefaultVersionNumber": 1,
+        "LatestVersionNumber": 1,
+        "Operator": {
+            "Managed": false
+        }
+    },
+    "Warning": {
+        "Errors": [
+            {
+                "Code": "InvalidIamInstanceProfile.NotFound",
+                "Message": "The IamInstanceProfile.Name 'itmo-444-544-viewer-profile' does not exist."
+            }
+        ]
+    }
+}
+== Looking up the default VPC and subnets in both AZs ==
+VPC: vpc-0342e7c232f2f9681
+us-east-2a subnet: subnet-0367a4da3e6fb0a91
+us-east-2b subnet: subnet-06783c984f44def51
+== ALB security group ==
+ALB security group: sg-0929dd01e8fc405a4
+== Tightening the app security group ==
+App security group configured for ALB access.
+== Target groups ==
+Uploader target group: arn:aws:elasticloadbalancing:us-east-2:284901686080:targetgroup/itmo-444-544-uploader-tg/9442b246ec3da309
+Viewer target group: arn:aws:elasticloadbalancing:us-east-2:284901686080:targetgroup/itmo-444-544-viewer-tg/adf5ba33c961fbf6
+== Application Load Balancer ==
+Waiting for the ALB to become active...
+== Creating ALB listeners ==
+ALB DNS name: itmo-444-544-app-alb-1049503674.us-east-2.elb.amazonaws.com
+== Auto Scaling Groups ==
+Both Auto Scaling Groups configured.
+== Saving stack outputs ==
+== Deployment complete ==
+ALB DNS name: itmo-444-544-app-alb-1049503674.us-east-2.elb.amazonaws.com
+Uploader: http://itmo-444-544-app-alb-1049503674.us-east-2.elb.amazonaws.com:8080/
+Viewer: http://itmo-444-544-app-alb-1049503674.us-east-2.elb.amazonaws.com:8081/
+Allow time for the applications to start and health checks to pass.
+Check Uploader health with:
+aws elbv2 describe-target-health --target-group-arn arn:aws:elasticloadbalancing:us-east-2:284901686080:targetgroup/itmo-444-544-uploader-tg/9442b246ec3da309 --region us-east-2
+Check Viewer health with:
+aws elbv2 describe-target-health --target-group-arn arn:aws:elasticloadbalancing:us-east-2:284901686080:targetgroup/itmo-444-544-viewer-tg/adf5ba33c961fbf6 --region us-east-2

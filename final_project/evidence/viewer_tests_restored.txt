@@ -1,0 +1,94 @@
+
+> resume-viewer@1.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: highlight bolds whole-word keywords and escapes everything else
+ok 1 - highlight bolds whole-word keywords and escapes everything else
+  ---
+  duration_ms: 1.662851
+  type: 'test'
+  ...
+# Subtest: renderResume cannot be used to inject HTML
+ok 2 - renderResume cannot be used to inject HTML
+  ---
+  duration_ms: 0.590776
+  type: 'test'
+  ...
+# Subtest: email addresses are validated
+ok 3 - email addresses are validated
+  ---
+  duration_ms: 0.20781
+  type: 'test'
+  ...
+# Subtest: first use of an address requests a confirmation and publishes nothing
+ok 4 - first use of an address requests a confirmation and publishes nothing
+  ---
+  duration_ms: 1.354131
+  type: 'test'
+  ...
+# Subtest: a pending subscription publishes nothing
+ok 5 - a pending subscription publishes nothing
+  ---
+  duration_ms: 0.273511
+  type: 'test'
+  ...
+# Subtest: a confirmed address gets the link, addressed by the recipient attribute
+ok 6 - a confirmed address gets the link, addressed by the recipient attribute
+  ---
+  duration_ms: 0.24586
+  type: 'test'
+  ...
+# Subtest: the limiter blocks the seventh request in an hour
+ok 7 - the limiter blocks the seventh request in an hour
+  ---
+  duration_ms: 0.24796
+  type: 'test'
+  ...
+# Subtest: route: bad ids are 404 before S3 is touched
+ok 8 - route: bad ids are 404 before S3 is touched
+  ---
+  duration_ms: 54.975485
+  type: 'test'
+  ...
+# Subtest: route: a missing resume is a 404, and a found one is drawn
+ok 9 - route: a missing resume is a 404, and a found one is drawn
+  ---
+  duration_ms: 14.213047
+  type: 'test'
+  ...
+# Subtest: route: download redirects to a short-lived signed link
+ok 10 - route: download redirects to a short-lived signed link
+  ---
+  duration_ms: 10.025034
+  type: 'test'
+  ...
+# {"ts":"2026-11-23T18:18:25.779Z","event":"email_request","result":"sent"}
+# Subtest: route: email publishes a one hour link for a confirmed address
+ok 11 - route: email publishes a one hour link for a confirmed address
+  ---
+  duration_ms: 21.509753
+  type: 'test'
+  ...
+# Subtest: route: an invalid address is a 400 and SNS is never called
+ok 12 - route: an invalid address is a 400 and SNS is never called
+  ---
+  duration_ms: 7.306419
+  type: 'test'
+  ...
+# {"ts":"2026-11-23T18:18:25.801Z","event":"error","stage":"email","message":"Error: boom"}
+# Subtest: route: an SNS failure is a friendly page, not a crash
+ok 13 - route: an SNS failure is a friendly page, not a crash
+  ---
+  duration_ms: 9.916191
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 387.237817

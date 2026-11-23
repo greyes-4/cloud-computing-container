@@ -1,0 +1,107 @@
+== Identifying current ASG instances ==
+Instances to terminate: i-0c500d6b67b16bf2e	i-0043d30e05ce1ee8a
+== Deleting Auto Scaling Groups ==
+Deleting itmo-444-544-uploader-asg...
+Deleting itmo-444-544-viewer-asg...
+== Waiting for Auto Scaling Groups to be deleted ==
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+Waiting for itmo-444-544-uploader-asg...
+itmo-444-544-uploader-asg deleted.
+Waiting for itmo-444-544-viewer-asg...
+itmo-444-544-viewer-asg deleted.
+Both Auto Scaling Groups have been deleted.
+== Waiting for ASG EC2 instances to terminate ==
+ASG instances terminated.
+== Deleting Application Load Balancer ==
+Waiting for ALB deletion...
+== Deleting Target Groups ==
+
+aws: [ERROR]: An error occurred (ResourceInUse) when calling the DeleteTargetGroup operation: Target group 'arn:aws:elasticloadbalancing:us-east-2:284901686080:targetgroup/itmo-444-544-uploader-tg/9442b246ec3da309' is currently in use by a listener or a rule
+Retrying target group deletion (1/12)...
+Target group deleted.
+Target group deleted.
+== Cleaning up security groups ==
+{
+    "Return": true,
+    "RevokedSecurityGroupRules": [
+        {
+            "SecurityGroupRuleId": "sgr-09a4b79073e2d89ef",
+            "GroupId": "sg-00569ad1588cf368c",
+            "IsEgress": false,
+            "IpProtocol": "tcp",
+            "FromPort": 3000,
+            "ToPort": 3000,
+            "ReferencedGroupId": "sg-0929dd01e8fc405a4"
+        }
+    ]
+}
+{
+    "Return": true,
+    "GroupId": "sg-0929dd01e8fc405a4"
+}
+ALB security group deleted.
+Deleting launch templates...
+{
+    "LaunchTemplate": {
+        "LaunchTemplateId": "lt-072f6ab27a2d527c8",
+        "LaunchTemplateName": "itmo-444-544-uploader-lt",
+        "CreateTime": "2026-11-23T04:40:52+00:00",
+        "CreatedBy": "arn:aws:iam::284901686080:user/lab-user",
+        "DefaultVersionNumber": 1,
+        "LatestVersionNumber": 2,
+        "Operator": {
+            "Managed": false
+        }
+    }
+}
+{
+    "LaunchTemplate": {
+        "LaunchTemplateId": "lt-0e6619ea1891d041a",
+        "LaunchTemplateName": "itmo-444-544-viewer-lt",
+        "CreateTime": "2026-11-23T04:40:55+00:00",
+        "CreatedBy": "arn:aws:iam::284901686080:user/lab-user",
+        "DefaultVersionNumber": 1,
+        "LatestVersionNumber": 1,
+        "Operator": {
+            "Managed": false
+        }
+    }
+}
+Removing IAM instance profiles and roles...
+Emptying and deleting S3 bucket...
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/5e09b28bf105d230e6e1f3b63d45947a.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/5e09b28bf105d230e6e1f3b63d45947a.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/8926f9ff26385a51abafd8654ae18dd1.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/dc99994c4fb5375238afd7c08049dfde.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/dc99994c4fb5375238afd7c08049dfde.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/d231801d9e706efd7fce35cf9b3387b3.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/8926f9ff26385a51abafd8654ae18dd1.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/986c9d8feb5a26cd3ca781e115e61c95.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/d231801d9e706efd7fce35cf9b3387b3.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/bc82338fd15ee1872e0c90727666ba44.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/de57e4865bc4877fbb3dc87e7d4de190.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/de57e4865bc4877fbb3dc87e7d4de190.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/986c9d8feb5a26cd3ca781e115e61c95.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/bc82338fd15ee1872e0c90727666ba44.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/e6288977a3ff0bbf9a1646b8d0364be8.docx
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/e6288977a3ff0bbf9a1646b8d0364be8.json
+delete: s3://itmo-444-544-gaelreyes-fileshare/resumes/presign-test.txt
+Cleanup complete.

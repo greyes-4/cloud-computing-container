@@ -1,0 +1,29 @@
+.
+..
+.env
+EC2_ALB_ASG Screenshot #1 - Deployment URLS.png
+EC2_ALB_ASG Screenshot #2 -  Uploader Success.png
+EC2_ALB_ASG Screenshot #2 -  Viewer Success.png
+EC2_ALB_ASG Screenshot #3 - Healthy Target Groups.png
+EC2_ALB_ASG Screenshot #4 - Passing Chaos Test.png
+EC2_ALB_ASG Screenshot #5 -  Failing Chaos Test.png
+EC2_ALB_ASG Screenshot #6 - AWS Resources Removed.png
+ITMO-444-544-lab-keypair.pem
+README.md
+cleanup_project.sh
+create_app_stack.sh
+create_app_stack.sh.original
+delete_app_stack.sh
+evidence
+previous
+samples
+stack_outputs.env
+trust-policy.json
+uploader-app
+uploader-lt-data.json
+uploader-policy.json
+user-data-uploader.sh
+user-data-viewer.sh
+viewer-app
+viewer-lt-data.json
+viewer-policy.json
